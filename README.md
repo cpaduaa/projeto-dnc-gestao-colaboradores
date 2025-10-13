@@ -10,7 +10,7 @@ As rotas estão configuradas em:
 
 ### 🧾 1. Cadastro de Usuário
 
-**POST** `/register`
+**POST** `/cadastrar`
 
 Cria um novo usuário no sistema.
 
