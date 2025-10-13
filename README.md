@@ -223,7 +223,8 @@ npm install
 Na raiz do projeto, crie um arquivo .env com:
 
 PORT=3000
-MONGO_URI=mongodb+srv://pam3lars:iVsQYe2KgsGg@cluster0.udwcv5w.mongodb.net/colaboradores?retryWrites=true&w=majority
+MONGO_URI
+JWT_SECRET
 
 4️⃣ Executar o servidor
 npm start
