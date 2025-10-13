@@ -195,3 +195,72 @@ Remove um colaborador do sistema.
 | ------ | -------------------------- |
 | 404    | Colaborador não encontrado |
 | 500    | Erro interno do servidor   |
+
+🌐 DEPLOY
+
+A API está hospedada e acessível online pelo link:
+👉
+
+🔧 Variáveis de Ambiente
+
+Durante o deploy na Vercel, foram configuradas as seguintes variáveis:
+
+Variável	Descrição
+MONGO_URI=mongodb+srv://pam3lars:iVsQYe2KgsGg@cluster0.udwcv5w.mongodb.net/colaboradores?retryWrites=true&w=majority
+JWT_SECRET	
+PORT 3000
+
+⚙️ COMO EXECUTAR LOCALMENTE
+1️⃣ Clonar o repositório
+git clone https://github.com/cpaduaa/projeto-dnc-gestao-colaboradores.git
+cd dnc-api-gestao-colaboradores
+
+2️⃣ Instalar dependências
+npm install
+
+3️⃣ Criar o arquivo .env
+
+Na raiz do projeto, crie um arquivo .env com:
+
+PORT=3000
+MONGO_URI=mongodb+srv://pam3lars:iVsQYe2KgsGg@cluster0.udwcv5w.mongodb.net/colaboradores?retryWrites=true&w=majority
+
+4️⃣ Executar o servidor
+npm start
+
+
+ou
+
+npm run dev
+
+
+O servidor rodará em:
+
+http://localhost:3000
+
+🧪 TESTES COM INSOMNIA / POSTMAN
+
+Registrar usuário: POST /cadastrar
+
+Fazer login: POST /login → copiar o token JWT
+
+Adicionar token nas rotas protegidas:
+
+Authorization: Bearer SEU_TOKEN_AQUI
+
+
+Testar rotas de colaboradores: criar, listar, editar e deletar.
+
+🏁 CONCLUSÃO
+
+Com a API de Gestão de Colaboradores, a empresa poderá:
+
+Centralizar as informações de colaboradores
+
+Automatizar cadastros e atualizações
+
+Reduzir inconsistências e retrabalhos
+
+Garantir segurança via autenticação JWT
+
+Escalar facilmente com MongoDB Atlas e Vercel
