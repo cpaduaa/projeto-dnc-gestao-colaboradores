@@ -306,15 +306,26 @@ O servidor rodará em: `http://localhost:3000`
 
 ## 🧪 TESTES COM INSOMNIA / POSTMAN
 
-### Passo a passo:
+### 📦 Collection Pronta
 
-1. **Registrar usuário**: `POST /cadastrar`
-2. **Fazer login**: `POST /login` → copiar o token JWT
-3. **Adicionar token nas rotas protegidas**:
+Importe a collection do Postman localizada em: `docs/Postman_Collection.json`
+
+A collection já contém:
+- ✅ Todos os endpoints configurados
+- ✅ Variáveis de ambiente
+- ✅ Headers de autenticação
+- ✅ Exemplos de JSON para cada rota
+
+### 📝 Passo a passo manual:
+
+1. **Verificar status**: `GET /` (para confirmar que a API está online)
+2. **Registrar usuário**: `POST /cadastrar`
+3. **Fazer login**: `POST /login` → copiar o token JWT
+4. **Adicionar token nas rotas protegidas**:
    ```
    Authorization: Bearer SEU_TOKEN_AQUI
    ```
-4. **Testar rotas de colaboradores**: criar, listar, buscar, editar e deletar
+5. **Testar rotas de colaboradores**: criar, listar, buscar, editar e deletar
 
 ---
 

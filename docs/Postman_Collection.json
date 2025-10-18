@@ -1,0 +1,142 @@
+{
+  "info": {
+    "name": "API Gestão Colaboradores",
+    "description": "Collection para testar todos os endpoints da API de Gestão de Colaboradores",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000"
+    },
+    {
+      "key": "token",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "Status da API",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{base_url}}/"
+      }
+    },
+    {
+      "name": "Cadastrar Usuário",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Admin Teste\",\n  \"email\": \"admin@teste.com\",\n  \"senha\": \"123456\",\n  \"tipo\": \"admin\"\n}"
+        },
+        "url": "{{base_url}}/cadastrar"
+      }
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"admin@teste.com\",\n  \"senha\": \"123456\"\n}"
+        },
+        "url": "{{base_url}}/login"
+      }
+    },
+    {
+      "name": "Listar Colaboradores",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{base_url}}/colaboradores"
+      }
+    },
+    {
+      "name": "Criar Colaborador",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Maria Silva\",\n  \"email\": \"maria@empresa.com\",\n  \"cargo\": \"Desenvolvedora\"\n}"
+        },
+        "url": "{{base_url}}/colaboradores"
+      }
+    },
+    {
+      "name": "Buscar Colaborador por ID",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{base_url}}/colaboradores/ID_AQUI"
+      }
+    },
+    {
+      "name": "Atualizar Colaborador",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"cargo\": \"Desenvolvedora Sênior\"\n}"
+        },
+        "url": "{{base_url}}/colaboradores/ID_AQUI"
+      }
+    },
+    {
+      "name": "Deletar Colaborador",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{base_url}}/colaboradores/ID_AQUI"
+      }
+    }
+  ]
+}

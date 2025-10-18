@@ -8,7 +8,7 @@ import errorHandler from "./middlewares/errorHandler.js";
 dotenv.config();
 const app = express();
 
-// CORS simples para permitir uso da API
+// CORS
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
@@ -21,6 +21,19 @@ app.use((req, res, next) => {
 });
 
 app.use(express.json());
+
+// Rota de status da API
+app.get('/', (req, res) => {
+  res.json({
+    message: '🚀 API de Gestão de Colaboradores',
+    status: 'online',
+    timestamp: new Date().toISOString(),
+    endpoints: {
+      auth: ['/cadastrar', '/login'],
+      colaboradores: ['/colaboradores']
+    }
+  });
+});
 
 connectDB();
 

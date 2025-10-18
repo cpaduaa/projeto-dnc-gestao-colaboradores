@@ -24,6 +24,15 @@ export default {
   // Criar
   async criar(req, res, next) {
     try {
+      const { nome, cargo, email } = req.body;
+      
+      // Validação básica
+      if (!nome || !cargo || !email) {
+        return res.status(400).json({ 
+          error: "Dados obrigatórios: nome, cargo e email" 
+        });
+      }
+      
       const colaborador = new Colaborador(req.body);
       await colaborador.save();
       res.status(201).json(colaborador);
