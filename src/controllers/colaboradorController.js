@@ -50,7 +50,7 @@ export default {
       const { id } = req.params;
       const colaboradorRemovido = await Colaborador.findByIdAndDelete(id);
       if (!colaboradorRemovido) return res.status(404).json({ error: "Colaborador não encontrado" });
-      res.json({ message: "Colaborador removido com sucesso" });
+      res.json({ message: "Colaborador removido com sucesso!" });
     } catch (error) {
       next(error);
     }
