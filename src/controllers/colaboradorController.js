@@ -32,13 +32,25 @@ export default {
     }
   },
 
+  // Buscar por ID
+  async buscarPorId(req, res, next) {
+    try {
+      const { id } = req.params;
+      const colaborador = await Colaborador.findById(id);
+      if (!colaborador) return res.status(404).json({ error: "Colaborador não encontrado" });
+      res.json(colaborador);
+    } catch (error) {
+      next(error);
+    }
+  },
+
   // Editar
   async editar(req, res, next) {
     try {
       const { id } = req.params;
       const colaboradorAtualizado = await Colaborador.findByIdAndUpdate(id, req.body, { new: true });
       if (!colaboradorAtualizado) return res.status(404).json({ error: "Colaborador não encontrado" });
-      res.json(colaboradorAtualizado);
+      res.json({ message: "Colaborador atualizado com sucesso!", colaborador: colaboradorAtualizado });
     } catch (error) {
       next(error);
     }
