@@ -207,8 +207,8 @@ Durante o deploy na Vercel, foram configuradas as seguintes variáveis:
 
 Variável	Descrição
 MONGO_URI=mongodb+srv://pam3lars:iVsQYe2KgsGg@cluster0.udwcv5w.mongodb.net/colaboradores?retryWrites=true&w=majority
-JWT_SECRET	
-PORT 3000
+JWT_SECRET=763db5709c84643acf9fdb1f8cf9532264f13c4aed4dfd66003273a53f39de8a
+PORT=3000
 
 ⚙️ COMO EXECUTAR LOCALMENTE
 1️⃣ Clonar o repositório

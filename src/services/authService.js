@@ -1,5 +1,6 @@
 import usuarioRepository from "../repositories/usuarioRepository.js";
 import { gerarToken } from "../config/jwt.js";
+import { enviarEmailBoasVindas } from "../config/email.js";
 
 export default {
   async registrar(data) {
@@ -8,6 +9,8 @@ export default {
 
     const usuario = await usuarioRepository.criar(data);
     const token = gerarToken(usuario);
+    
+    await enviarEmailBoasVindas(usuario.email, usuario.nome);
 
     return { usuario, token };
   },
