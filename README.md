@@ -329,9 +329,20 @@ A collection já contém:
 
 ---
 
-## 🌐 DEPLOY
+## 🌍 DEPLOY
 
-A API pode ser facilmente deployada na **Vercel** ou outras plataformas.
+### 🚀 API em Produção
+
+A API está disponível online em:
+
+**Base URL:** `https://projeto-dnc-gestao-colaboradores.vercel.app/`
+
+Exemplo de teste:
+```bash
+curl https://projeto-dnc-gestao-colaboradores.vercel.app/
+```
+
+### Como foi feito o deploy:
 
 ### Variáveis de Ambiente para Deploy:
 
