@@ -10,7 +10,12 @@ export default {
     const usuario = await usuarioRepository.criar(data);
     const token = gerarToken(usuario);
     
-    await enviarEmailBoasVindas(usuario.email, usuario.nome);
+    // Tenta enviar email mas não quebra se falhar
+    try {
+      await enviarEmailBoasVindas(usuario.email, usuario.nome);
+    } catch (emailError) {
+      console.log('Erro ao enviar email (não crítico):', emailError.message);
+    }
 
     return { usuario, token };
   },
